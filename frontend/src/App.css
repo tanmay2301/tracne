@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+*{
+  font-family: Karla;
+}
+
+body {
+    padding-top: 4rem; 
+    overflow-x: hidden; 
+  }
+
+html {
+    overflow-y: scroll;
+}
+  
