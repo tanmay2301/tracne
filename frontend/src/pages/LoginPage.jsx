@@ -95,7 +95,7 @@ const SignIn = () => {
               />
             </div>
           )}
-          <button type="submit" className="w-full px-4 py-2 mt-6 rounded-md font-bold bg-teal-600 text-white hover:bg-teal-700">
+          <button type="submit" className="w-full px-4 py-2 mt-6 rounded-md cursor-pointer font-bold bg-teal-600 text-white hover:bg-teal-700">
             {isSignIn ? "Sign In" : "Create Account"}
           </button>
         </form>

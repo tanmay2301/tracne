@@ -27,30 +27,30 @@ export default function Navbar() {
             tracne
           </Link>
           <div className="flex items-center space-x-12">
-            <Link to="/" className="text-gray-500 hover:text-teal-700 px-3 py-2 text-sm font-medium">
+            <Link to="/" className="text-gray-500 hover:text-teal-700 hover:bg-teal-50 hover: rounded-2xl px-3 py-2 text-sm font-medium">
               Home
             </Link>
-            <Link to="/track" className="text-gray-500 hover:text-teal-700 px-3 py-2 text-sm font-medium">
+            <Link to="/track" className="text-gray-500 hover:text-teal-700 hover:bg-teal-50 hover: rounded-2xl  px-3 py-2 text-sm font-medium">
               Track
             </Link>
-            <Link to="/analysis" className="text-gray-500 hover:text-teal-700 px-3 py-2 text-sm font-medium">
+            <Link to="/analysis" className="text-gray-500 hover:text-teal-700 hover:bg-teal-50 hover: rounded-2xl px-3 py-2 text-sm font-medium">
               Dashboard
             </Link>
             {isLoggedIn ? (
               <div className="relative">
                 <FaRegUserCircle
                   size={28}
-                  className="cursor-pointer text-gray-600 hover:text-teal-700"
+                  className="cursor-pointer text-teal-700 hover:text-gray-600"
                   onClick={() => setShowDropdown(!showDropdown)}
                 />
                 {showDropdown && (
                   <div
-                    className="absolute right-0 mt-2 w-32 bg-white border rounded-md shadow-lg"
+                    className="absolute right-0 mt-2 w-32 bg-white rounded-2xl shadow-lg "
                     onMouseLeave={() => setShowDropdown(false)}
                   >
                     <button
                       onClick={handleLogout}
-                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      className="block w-full text-center px-4 py-2 text-sm text-gray-700 hover:bg-teal-50 cursor-pointer hover: rounded-2xl"
                     >
                       Logout
                     </button>
@@ -58,7 +58,7 @@ export default function Navbar() {
                 )}
               </div>
             ) : (
-              <Link to="/login" className="bg-teal-600 text-white px-4 py-2 rounded-md text-sm font-medium">
+              <Link to="/login" className="bg-teal-600 text-white px-4 hover:bg-teal-700 py-2 rounded-2xl text-sm font-medium">
                 Sign In
               </Link>
             )}

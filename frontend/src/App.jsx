@@ -6,6 +6,7 @@ import TrackPage from "./pages/TrackPage";
 import AcneAnalysisPage from "./pages/AcneAnalysisPage";
 import LoginPage from "./pages/LoginPage";
 import ProtectedRoute from "./components/ProtectedRoute";  // Import ProtectedRoute
+import UnauthorizedPage from "./pages/UnauthorizedPage"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/auth" element={<UnauthorizedPage />} />
           
           {/* Protected Routes */}
           <Route element={<ProtectedRoute />}>
