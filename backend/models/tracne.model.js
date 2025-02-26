@@ -1,14 +1,19 @@
 import mongoose from "mongoose";
 
 const tracneSchema = new mongoose.Schema({
-    
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+
     foodIntake: {
         type: String,
-        required: true // Optional field to log what the user ate
+        required: true
     },
 
     skincareProducts: {
-        type: [String], // Array to store multiple products
+        type: [String],
         required: true
     },
 
@@ -35,7 +40,7 @@ const tracneSchema = new mongoose.Schema({
     },
 
     image: {
-        type: String, // URL of uploaded image
+        type: String,
         required: false
     }
 }, { timestamps: true });

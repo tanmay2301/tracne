@@ -46,6 +46,7 @@ const SignIn = () => {
       localStorage.setItem("token", data.token);
       console.log("Token stored:", data.token); // Debugging
       navigate("/track"); // Redirect after login
+      window.location.reload()
     } catch (err) {
       setError(err.message);
     }
