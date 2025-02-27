@@ -82,7 +82,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="bg-teal-800 text-white py-12 px-4 sm:px-8 lg:px-12">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center">
+        <div className="max-w-8xl mx-auto flex flex-col sm:flex-row justify-between items-center">
           <div className="mb-6 sm:mb-0">
             <h3 className="text-2xl font-semibold">Tracne</h3>
             <p className="text-lg text-teal-200">Your journey to clearer skin starts here</p>
