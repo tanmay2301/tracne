@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import { CalendarIcon, ChevronDown, Upload, Edit, Trash2 } from "lucide-react";
 
@@ -23,7 +21,7 @@ export default function TrackPage() {
 
   // Fetch all entries on component mount
   useEffect(() => {
-    console.log("✅ TrackPage useEffect Running");
+    console.log(" TrackPage useEffect Running");
     fetchEntries();
   }, []);
 
@@ -34,7 +32,7 @@ export default function TrackPage() {
 
     try {
         const token = localStorage.getItem("token"); // Get token from localStorage
-        console.log("🛠 Fetching Entries - Token:", token); // Debugging
+        console.log(" Fetching Entries - Token:", token); // Debugging
 
         const response = await fetch("/api/tracne", {
             method: "GET",
@@ -44,19 +42,19 @@ export default function TrackPage() {
             }
         });
 
-        console.log("📡 API Response Status:", response.status); // Debugging
+        console.log(" API Response Status:", response.status); // Debugging
 
         if (!response.ok) {
             throw new Error(`Failed to fetch entries (Status: ${response.status})`);
         }
 
         const data = await response.json();
-        console.log("📊 Received Data:", data); // Debugging
+        console.log(" Received Data:", data); // Debugging
 
         setPastEntries(data.data || []);
     } catch (err) {
         setError(err.message);
-        console.error("❌ Error fetching entries:", err);
+        console.error(" Error fetching entries:", err);
     } finally {
         setLoading(false);
     }
@@ -76,10 +74,14 @@ export default function TrackPage() {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setFormData(prev => ({
-        ...prev,
-        image: file
-      }));
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setFormData(prev => ({
+          ...prev,
+          image: event.target.result // This will be a base64 data URL
+        }));
+      };
+      reader.readAsDataURL(file);
     }
   };
 
@@ -99,17 +101,10 @@ export default function TrackPage() {
         acneType: formData.acneType,
         severity: formData.severity,
         notes: formData.notes || undefined,
+        image: formData.image || undefined
       };
 
-      if (formData.image) {
-        if (formData.image instanceof File) {
-          entryData.image = URL.createObjectURL(formData.image);
-        } else {
-          // If it's a string (URL), just use it directly
-          entryData.image = formData.image;
-        }
-      }
-      
+     
       let response;
       
       if (editingId) {
@@ -224,7 +219,7 @@ export default function TrackPage() {
       </h1>
 
       <section className="mb-12">
-        <p className="text-gray-600 mb-4 text-md">
+        <p className="text-gray-900 mb-4 text-md">
           Log your daily acne status, diet, and skincare routine to track your
           progress over time.<br></br> This information will help you identify patterns
           and improve your skincare regimen.
@@ -392,7 +387,7 @@ export default function TrackPage() {
           Past Entries
         </h2>
         {loading && !editingId && <p>Loading entries...</p>}
-        <div className="space-y-4">
+        <div className="space-y-4 overflow-auto break-words">
           {pastEntries.length === 0 && !loading ? (
             <p className="text-gray-600">No entries found. Start tracking today!</p>
           ) : (
@@ -450,11 +445,7 @@ export default function TrackPage() {
             ))
           )}
         </div>
-        {pastEntries.length > 0 && (
-          <button className="mt-4 px-4 py-2 rounded-md cursor-pointer bg-gray-200 hover:bg-gray-300 flex items-center">
-            <ChevronDown className="mr-2 h-4 w-4" /> Load More
-          </button>
-        )}
+        
       </section>
     </div>
   );

@@ -14,10 +14,10 @@ export default function HomePage() {
           Breakout in Personalized Acne Tracking - <span className="text-teal-700 font-extrabold text-2xl italic">tracne</span>
             </p>
             <div className="mt-10">
-              <Link to="/track">
+              <Link to="/about">
                 <button className="inline-flex items-center my-3 px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-teal-600 hover:bg-teal-700 cursor-pointer">
-                  Start Tracking
-                  <ArrowRight className="ml-2 -mr-1 h-5 w-5" />
+                  Learn More
+                  
                 </button>
               </Link>
             </div>
@@ -41,8 +41,8 @@ export default function HomePage() {
               />
               <FeatureCard
                 icon={<Calendar className="h-8 w-8 text-indigo-500" />}
-                title="Treatment Reminders"
-                description="Stay consistent with your skincare routine using customizable reminders."
+                title="Daily Tracker"
+                description="Stay consistent with your skincare routine using daily entries."
               />
             </div>
           </div>
@@ -70,9 +70,9 @@ export default function HomePage() {
               />
             </div>
             <div className="mt-12">
-              <Link to="/learn-more">
+              <Link to="/track">
                 <button className="inline-flex items-center px-6 py-3 border border-teal-600 text-base font-medium rounded-md text-teal-600 bg-white hover:bg-teal-50 cursor-pointer">
-                  Learn More
+                  Start Tracking
                   <ArrowRight className="ml-2 -mr-1 h-5 w-5" />
                 </button>
               </Link>

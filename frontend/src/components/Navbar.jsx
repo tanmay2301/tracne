@@ -45,7 +45,7 @@ export default function Navbar() {
                 />
                 {showDropdown && (
                   <div
-                    className="absolute right-0 mt-2 w-32 bg-white rounded-2xl shadow-lg "
+                    className="absolute right-0 mt-2 w-20 bg-white rounded-2xl shadow-lg "
                     onMouseLeave={() => setShowDropdown(false)}
                   >
                     <button

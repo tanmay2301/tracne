@@ -23,11 +23,7 @@ export default function UnauthorizedAccess() {
           
         </div>
       </div>
-      <div className="mt-12 flex justify-center space-x-8">
-        <div className="w-16 h-16 bg-teal-200 rounded-full opacity-50"></div>
-        <div className="w-16 h-16 bg-blue-200 rounded-full opacity-50"></div>
-        <div className="w-16 h-16 bg-teal-200 rounded-full opacity-50"></div>
-      </div>
+      
       <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-teal-400 via-blue-500 to-teal-400"></div>
     </div>
   )
