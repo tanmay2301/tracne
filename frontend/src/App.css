@@ -2,6 +2,7 @@
 
 *{
   font-family: Karla;
+  box-sizing: border-box;
 }
 
 body {
@@ -13,3 +14,15 @@ html {
     overflow-y: scroll;
 }
   
+html, body {
+  width: 100vw;
+  height: 100vh;
+  transform-origin: top left;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+@media screen and (min-width: 1280px) { /* Replace 1280px with your laptop width */
+  body {
+    transform: scale(calc(100vw / 1280)); /* Adjusts the scale globally */
+  }
+}
