@@ -287,6 +287,7 @@ export default function TrackPage() {
                   placeholder="Number of acne spots"
                   required
                   className="w-full border p-2 rounded-md"
+                  min = "0"
                   value={formData.acneCount}
                   onChange={handleChange}
                 />
@@ -353,10 +354,10 @@ export default function TrackPage() {
                   id="image"
                   type="file"
                   accept="image/*"
-                  className="flex-grow border p-2 rounded-md"
+                  className="flex-grow border p-2 rounded-md cursor-pointer"
                   onChange={handleFileChange}
                 />
-                <button type="button" className="p-2 border rounded-md cursor-pointer hover:bg-gray-300">
+                <button type="button" className="p-2 rounded-md cursor-pointer">
                   <Upload className="h-4 w-4" />
                 </button>
               </div>
