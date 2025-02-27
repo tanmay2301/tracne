@@ -213,13 +213,13 @@ export default function TrackPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 mt-5">
-      <h1 className="text-3xl font-bold text-teal-800 mb-2">
+    <div className="container mx-auto px-4 py-8 mt-5 max-w-5xl">
+      <h1 className="text-4xl font-bold text-teal-800 mb-6">
         Track Your Acne Progress
       </h1>
 
-      <section className="mb-12">
-        <p className="text-gray-900 mb-4 text-md">
+      <section className="mb-10">
+        <p className="text-gray-900 mb-4 text-lg">
           Log your daily acne status, diet, and skincare routine to track your
           progress over time.<br></br> This information will help you identify patterns
           and improve your skincare regimen.
@@ -232,11 +232,11 @@ export default function TrackPage() {
         </div>
       )}
 
-      <section className="mb-12 ">
+      <section className="mb-10">
         <h2 className="text-2xl font-semibold text-teal-700 mb-4">
           {editingId ? "Edit Entry" : "Today's Entry"}
         </h2>
-        <div className="border rounded-lg shadow p-6 w-full max-w-3xl">
+        <div className="border rounded-lg shadow-lg p-6 w-full">
           <div className="mb-4 flex items-center">
             <CalendarIcon className="mr-2 text-teal-800" />
             <h3 className="text-xl text-teal-800 font-semibold">
@@ -246,39 +246,39 @@ export default function TrackPage() {
           <p className="text-gray-600 mb-4">
             {editingId ? "Update your acne status" : "Record your acne status for today"}
           </p>
-          <form className="space-y-4" onSubmit={handleSubmit}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <form className="space-y-5" onSubmit={handleSubmit}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
-                <label htmlFor="foodIntake" className="font-medium">
+                <label htmlFor="foodIntake" className="font-medium text-base block mb-1">
                   Food Intake
                 </label>
                 <input
                   id="foodIntake"
                   placeholder="What did you eat today?"
                   required
-                  className="w-full border p-2 rounded-md"
+                  className="w-full border p-3 rounded-md text-base"
                   value={formData.foodIntake}
                   onChange={handleChange}
                 />
               </div>
               <div>
-                <label htmlFor="skincareProducts" className="font-medium">
+                <label htmlFor="skincareProducts" className="font-medium text-base block mb-1">
                   Skincare Products
                 </label>
                 <input
                   id="skincareProducts"
                   placeholder="e.g., Cleanser, Moisturizer"
                   required
-                  className="w-full border p-2 rounded-md"
+                  className="w-full border p-3 rounded-md text-base"
                   value={formData.skincareProducts}
                   onChange={handleChange}
                 />
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
-                <label htmlFor="acneCount" className="font-medium">
+                <label htmlFor="acneCount" className="font-medium text-base block mb-1">
                   Acne Count
                 </label>
                 <input
@@ -286,20 +286,20 @@ export default function TrackPage() {
                   id="acneCount"
                   placeholder="Number of acne spots"
                   required
-                  className="w-full border p-2 rounded-md"
+                  className="w-full border p-3 rounded-md text-base"
                   min = "0"
                   value={formData.acneCount}
                   onChange={handleChange}
                 />
               </div>
               <div>
-                <label htmlFor="acneType" className="font-medium">
+                <label htmlFor="acneType" className="font-medium text-base block mb-1">
                   Acne Type
                 </label>
                 <select
                   id="acneType"
                   required
-                  className="w-full border p-2 rounded-md"
+                  className="w-full border p-3 rounded-md text-base"
                   value={formData.acneType}
                   onChange={handleChange}
                 >
@@ -315,13 +315,13 @@ export default function TrackPage() {
             </div>
 
             <div>
-              <label htmlFor="severity" className="font-medium">
+              <label htmlFor="severity" className="font-medium text-base block mb-1">
                 Severity
               </label>
               <select
                 id="severity"
                 required
-                className="w-full border p-2 rounded-md"
+                className="w-full border p-3 rounded-md text-base"
                 value={formData.severity}
                 onChange={handleChange}
               >
@@ -333,20 +333,20 @@ export default function TrackPage() {
             </div>
 
             <div>
-              <label htmlFor="notes" className="font-medium">
+              <label htmlFor="notes" className="font-medium text-base block mb-1">
                 Notes (Optional)
               </label>
               <textarea
                 id="notes"
                 placeholder="Any additional observations or treatments used"
-                className="w-full border p-2 rounded-md"
+                className="w-full border p-3 rounded-md text-base min-h-24"
                 value={formData.notes}
                 onChange={handleChange}
               />
             </div>
 
             <div>
-              <label htmlFor="image" className="font-medium">
+              <label htmlFor="image" className="font-medium text-base block mb-1">
                 Upload Image (Optional)
               </label>
               <div className="flex items-center space-x-2">
@@ -354,26 +354,26 @@ export default function TrackPage() {
                   id="image"
                   type="file"
                   accept="image/*"
-                  className="flex-grow border p-2 rounded-md cursor-pointer"
+                  className="flex-grow border p-3 rounded-md cursor-pointer text-base"
                   onChange={handleFileChange}
                 />
-                <button type="button" className="p-2 rounded-md cursor-pointer">
-                  <Upload className="h-4 w-4" />
+                <button type="button" className="p-3 rounded-md cursor-pointer">
+                  <Upload className="h-5 w-5" />
                 </button>
               </div>
             </div>
 
-            <div className="flex justify-between">
+            <div className="flex justify-between pt-2">
               <button
                 type="button"
-                className="px-4 py-2 rounded-md bg-gray-300 hover:bg-red-300 cursor-pointer"
+                className="px-5 py-3 rounded-md bg-gray-300 hover:bg-red-300 cursor-pointer text-base font-medium"
                 onClick={resetForm}
               >
                 {editingId ? "Cancel Edit" : "Cancel"}
               </button>
               <button
                 type="submit"
-                className="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 cursor-pointer"
+                className="px-5 py-3 bg-teal-600 text-white rounded-md hover:bg-teal-700 cursor-pointer text-base font-medium"
                 disabled={loading}
               >
                 {loading ? "Saving..." : (editingId ? "Update Entry" : "Save Entry")}
@@ -388,57 +388,63 @@ export default function TrackPage() {
           Past Entries
         </h2>
         {loading && !editingId && <p>Loading entries...</p>}
-        <div className="space-y-4 overflow-auto break-words">
+        <div className="space-y-5 overflow-auto break-words">
           {pastEntries.length === 0 && !loading ? (
-            <p className="text-gray-600">No entries found. Start tracking today!</p>
+            <p className="text-gray-600 text-lg">No entries found. Start tracking today!</p>
           ) : (
             pastEntries.map((entry) => (
               <div
                 key={entry._id}
-                className="border rounded-lg shadow p-4 w-full max-w-3xl"
+                className="border rounded-lg shadow-md p-5 w-full"
               >
-                <div className="flex justify-between items-start">
-                  <h3 className="text-lg text-teal-800 font-semibold">
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-xl text-teal-800 font-semibold">
                     {formatDate(entry.createdAt)}
                   </h3>
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-3">
                     <button 
                       onClick={() => handleEdit(entry)}
                       className="text-blue-500 hover:text-blue-900 cursor-pointer"
                     >
-                      <Edit className="h-5 w-5" />
+                      <Edit className="h-6 w-6" />
                     </button>
                     <button 
                       onClick={() => handleDelete(entry._id)}
                       className="text-red-500 hover:text-red-900 cursor-pointer"
                     >
-                      <Trash2 className="h-5 w-5" />
+                      <Trash2 className="h-6 w-6" />
                     </button>
                   </div>
                 </div>
-                <p className="text-gray-600">
-                  <strong>Acne Count:</strong> {entry.acneCount} |{" "}
-                  <strong>Type:</strong> {entry.acneType} |{" "}
-                  <strong>Severity:</strong> {entry.severity}
-                </p>
-                <p className="text-gray-600">
-                  <strong>Food Intake:</strong> {entry.foodIntake}
-                </p>
-                <p className="text-gray-600">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-base">
+                  <p className="text-gray-700">
+                    <strong>Acne Count:</strong> {entry.acneCount}
+                  </p>
+                  <p className="text-gray-700">
+                    <strong>Type:</strong> {entry.acneType}
+                  </p>
+                  <p className="text-gray-700">
+                    <strong>Severity:</strong> {entry.severity}
+                  </p>
+                  <p className="text-gray-700">
+                    <strong>Food Intake:</strong> {entry.foodIntake}
+                  </p>
+                </div>
+                <p className="text-gray-700 mt-2 text-base">
                   <strong>Skincare Products:</strong>{" "}
                   {Array.isArray(entry.skincareProducts) ? entry.skincareProducts.join(", ") : entry.skincareProducts}
                 </p>
                 {entry.notes && (
-                  <p className="text-gray-600">
+                  <p className="text-gray-700 mt-2 text-base">
                     <strong>Notes:</strong> {entry.notes}
                   </p>
                 )}
                 {entry.image && (
-                  <div className="mt-2">
+                  <div className="mt-3">
                     <img 
                       src={entry.image} 
                       alt="Acne tracking" 
-                      className="w-24 h-24 object-cover rounded"
+                      className="w-32 h-32 object-cover rounded"
                     />
                   </div>
                 )}
