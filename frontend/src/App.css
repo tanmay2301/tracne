@@ -4,8 +4,6 @@
   font-family: Karla;
   box-sizing: border-box;
   
-  
-  
 }
 
 body {
@@ -13,8 +11,5 @@ body {
     overflow-x: hidden; 
   }
 
-html {
-    overflow-y: scroll;
-}
   
 

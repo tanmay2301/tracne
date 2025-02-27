@@ -99,8 +99,8 @@ const AcneAnalysisPage = () => {
   if (error) return <div className="container mx-auto px-4 py-8 mt-5">Error loading data: {error}</div>;
   if (entries.length < 3) return (
     <div className="container mx-auto px-4 py-8 mt-5">
-      <h1 className="text-3xl font-bold text-teal-800 mb-6">Acne Analysis</h1>
-      <p>You need at least 3 entries to generate meaningful analysis. Please continue tracking your acne to see insights.</p>
+      <h1 className="text-4xl font-bold text-teal-800 mb-6">Acne Analysis</h1>
+      <p className="text-xl">You need at least 3 entries to generate meaningful analysis. Please continue tracking your acne to see insights.</p>
     </div>
   );
 

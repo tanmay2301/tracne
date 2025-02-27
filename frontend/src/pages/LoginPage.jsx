@@ -51,12 +51,12 @@ const SignIn = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-teal-50 to-blue-50">
-      <div className="bg-white p-6 rounded-md shadow-md w-full max-w-md">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-teal-50 to-blue-50 ">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-xl">
         <Link to="/" className="text-teal-600 font-light mb-4 inline-block">
           ← Back to Home
         </Link>
-        <h2 className="text-2xl font-bold text-teal-800 text-center mb-10 mt-4">
+        <h2 className="text-3xl font-bold text-teal-800 text-center mb-10 mt-4">
           {isSignIn ? "Sign in to Tracne" : "Create your Tracne account"}
         </h2>
         {error && <p className="text-red-500 text-center">{error}</p>}
