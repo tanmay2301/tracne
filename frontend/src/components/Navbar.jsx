@@ -15,7 +15,7 @@ export default function Navbar() {
   const handleLogout = () => {
     localStorage.removeItem("token");
     setIsLoggedIn(false);
-    navigate("/"); // Redirect to home after logout
+    navigate("/"); 
     window.location.reload(); // Ensure state updates everywhere
   };
 

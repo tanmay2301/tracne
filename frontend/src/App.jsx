@@ -5,7 +5,7 @@ import Layout from "./components/Layout";
 import TrackPage from "./pages/TrackPage";
 import AcneAnalysisPage from "./pages/AcneAnalysisPage";
 import LoginPage from "./pages/LoginPage";
-import ProtectedRoute from "./components/ProtectedRoute";  // Import ProtectedRoute
+import ProtectedRoute from "./components/ProtectedRoute";  
 import UnauthorizedPage from "./pages/UnauthorizedPage"
 import AboutPage from "./pages/AboutPage"
 
