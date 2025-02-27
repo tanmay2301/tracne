@@ -90,9 +90,9 @@ export default function HomePage() {
           </div>
           <nav className="flex gap-4">
             <Link to="/about" className="text-sm hover:text-teal-300">About</Link>
-            <Link to="/privacy" className="text-sm hover:text-teal-300">Privacy</Link>
-            <Link to="/terms" className="text-sm hover:text-teal-300">Terms</Link>
-            <Link to="/contact" className="text-sm hover:text-teal-300">Contact</Link>
+            <Link to="/" className="text-sm hover:text-teal-300">Privacy</Link>
+            <Link to="/" className="text-sm hover:text-teal-300">Terms</Link>
+            <Link to="/" className="text-sm hover:text-teal-300">Contact</Link>
           </nav>
         </div>
       </footer>
