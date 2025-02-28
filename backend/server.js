@@ -9,7 +9,7 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5002; 
-const HOST = "0.0.0.0"; 
+
 
 const __dirname = path.resolve() 
 
@@ -31,7 +31,7 @@ if(process.env.NODE_ENV === "production"){
 }
 
 
-app.listen(PORT, HOST, () => {
+app.listen(PORT, () => {
     connectDB();
     console.log(`Server started at port ${PORT}`);
 });
